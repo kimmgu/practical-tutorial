@@ -1,7 +1,18 @@
 import 'tailwindcss/tailwind.css'
+import SignUp from './sign-up'
+import { AnyObject } from './types/sign-up'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <h1 class="text-9xl text-green-500 font-mono font-extrabold underline">
-    Practical Tutorial
-  </h1>
-`
+declare global {
+  interface Window {
+    Handlebars: {
+      compile: (template: string) => (data: AnyObject) => string
+    }
+    daum: any
+  }
+}
+
+const signUp = new SignUp('#app', {
+  title: '회원가입',
+})
+
+signUp.render()
