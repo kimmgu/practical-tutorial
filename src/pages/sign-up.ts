@@ -3,9 +3,9 @@ import {
   CantContainWhitespace,
   CantStartNumber,
   MinimumLengthLimit,
-} from './constant'
-import { AnyObject } from './types'
-import { TextField, PasswordField, AddressField } from './views/sign-up'
+} from '../constant'
+import { AnyObject } from '../types'
+import { TextField, PasswordField, AddressField } from '../views/sign-up'
 
 export default class SignUp {
   template = template
