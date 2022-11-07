@@ -1,5 +1,5 @@
 import { RequireRule } from '../../constant'
-import { ValidateRule } from '../../types/sign-up'
+import { ValidateRule } from '../../types'
 import { nextTick } from '../../utils'
 import template from './password-field.template'
 
@@ -20,10 +20,10 @@ type Props = {
 }
 
 const StrongMessage: [string, string, string, string] = [
-  '금지된 수준',
-  '심각한 수준',
-  '보통 수준',
-  '강력한 암호',
+  '사용불가',
+  '위험',
+  '보통',
+  '안전',
 ]
 
 const DefaultProps: Props = {

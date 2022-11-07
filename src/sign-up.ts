@@ -4,7 +4,7 @@ import {
   CantStartNumber,
   MinimumLengthLimit,
 } from './constant'
-import { AnyObject } from './types/sign-up'
+import { AnyObject } from './types'
 import { TextField, PasswordField, AddressField } from './views/sign-up'
 
 export default class SignUp {
@@ -57,12 +57,14 @@ export default class SignUp {
 
     const addressField = new AddressField('#optional-fields', {
       id: 'address',
-      label: '배송지 주소',
+      label: '주소',
     })
 
     idField.addValidateRule(CantContainWhitespace)
     idField.addValidateRule(CantStartNumber)
-    idField.addValidateRule(MinimumLengthLimit(3))
+    idField.addValidateRule(MinimumLengthLimit(5))
+
+    passwordField.addValidateRule(MinimumLengthLimit(8))
 
     emailField.addValidateRule(CantContainWhitespace)
 

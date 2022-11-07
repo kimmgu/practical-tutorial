@@ -1,6 +1,6 @@
 import 'tailwindcss/tailwind.css'
 import SignUp from './sign-up'
-import { AnyObject } from './types/sign-up'
+import { AnyObject } from './types'
 
 declare global {
   interface Window {

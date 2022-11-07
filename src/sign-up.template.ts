@@ -9,7 +9,7 @@ const template = `
         
         </div>
         
-        <p class="mt-8 text-gray-300 text-sm">Additional information</p>
+        <p class="mt-8 text-gray-400 text-sm">추가 정보</p>
 
         <div id="optional-fields">
         

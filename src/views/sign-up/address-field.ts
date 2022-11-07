@@ -1,4 +1,4 @@
-import { DaumAddress } from '../../types/sign-up'
+import { DaumAddress } from '../../types'
 import template from './address-field.template'
 
 type Props = {

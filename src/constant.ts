@@ -1,4 +1,4 @@
-import { ValidateRule } from './types/sign-up'
+import { ValidateRule } from './types'
 
 export const RequireRule: ValidateRule = {
   rule: /.+/,

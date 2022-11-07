@@ -1,3 +1,14 @@
+// Common
+export type AnyObject = {
+  [key: string]: any
+}
+
+export type ValidateRule = {
+  rule: RegExp
+  match: boolean
+  message: string
+}
+
 // Address
 export type Address = {
   zip: string
@@ -10,17 +21,6 @@ export type DaumAddress = {
   autoJibunAddress: string
   roadAddress: string
   sigunguCode: string
-}
-
-// Common
-export type AnyObject = {
-  [key: string]: any
-}
-
-export type ValidateRule = {
-  rule: RegExp
-  match: boolean
-  message: string
 }
 
 // User
