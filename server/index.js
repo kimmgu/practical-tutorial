@@ -1,15 +1,16 @@
-const path = require('path')
-const express = require('express')
-const morgan = require('morgan')
-const { urlencoded, json } = require('body-parser')
-const { v4 } = require('uuid')
-const axios = require('axios')
+import path from 'path'
+import express from 'express'
+import morgan from 'morgan'
+import { v4 } from 'uuid'
+import axios from 'axios'
+import bodyParser from 'body-parser'
+
 const app = express()
 
 app.use(express.static('dist'))
 app.use(morgan('dev'))
-app.use(urlencoded({ extended: false }))
-app.use(json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 app.get('/api/user/:id', (req, res) => {
   if (!req.headers['token']) {

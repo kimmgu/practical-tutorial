@@ -52,16 +52,21 @@ export default class Login {
         const options = { headers: { token } }
         this.#data.store.token = token
 
-        return axios.all([
-          axios.get(`/api/user/${id}`, options),
-          axios.get(`/api/user/${id}/posts`, options),
-        ])
-      })
-      .then(([profile, posts]) => {
-        this.#data.store.userProfile = profile.data.result
-        this.#data.store.userPosts = posts.data.results
+        axios
+          .all([
+            axios.get(`/api/user/${id}`, options),
+            axios.get(`/api/user/${id}/posts`, options),
+          ])
+          .then(([profile, posts]) => {
+            this.#data.store.userProfile = profile.data.result
+            this.#data.store.userPosts = posts.data.results
 
-        location.href = '/profile'
+            location.href = '/profile'
+          })
+          .catch((error) => {
+            this.#loginFail = true
+            this.render()
+          })
       })
       .catch((error) => {
         this.#loginFail = true

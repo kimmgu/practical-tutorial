@@ -26,19 +26,14 @@ function router() {
 
   switch (path) {
     case '/':
+      break
+    case '/signin':
       const signIn = new SignIn('#app', {
         store,
         title: '로그인',
       })
       signIn.render()
       break
-    // case 'signin':
-    //   const signIn = new SignIn('#app', {
-    //     store,
-    //     title: '로그인',
-    //   })
-    //   signIn.render()
-    //   break
     case '/signup':
       const signUp = new SignUp('#app', {
         store,
@@ -59,6 +54,6 @@ function router() {
   }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  router()
-})
+window.addEventListener('pathchange', router)
+
+document.addEventListener('DOMContentLoaded', router)
